@@ -1,10 +1,10 @@
 ---
-title: Getting started
-pageTitle: CacheAdvance - Never miss the cache again.
-description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
+title: Welcome to Prompt Engineering Patterns
+pageTitle: Prompt Engineering Patterns
+description: Learn about prompt engineering patterns.
 ---
 
-Learn how to get CacheAdvance set up in your project in under thirty minutes or it's free. {% .lead %}
+Prompt engineering is the process of designing and refining input prompts to obtain desired responses from AI models. {% .lead %}
 
 {% quick-links %}
 

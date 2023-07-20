@@ -39,15 +39,14 @@ export function Hero() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
           <div className="relative z-10 md:text-center lg:text-left">
             <div className="relative">
-              <p className="inline bg-custom-red bg-clip-text font-display text-5xl tracking-tight text-transparent">
-                Use ChatGPT Like a Pro
+              <p className="inline bg-custom-red bg-clip-text font-display text-5xl tracking-tight text-transparent drop-shadow">
+                Master ChatGPT with Ease
               </p>
               <p className="mt-3 text-2xl tracking-tight text-white">
-                Unsure where to begin? Let the interactive Prompt Wizard
-                tool generate a kickass prompt for you
+                Can&apos;t write the perfect prompt? Our interactive Prompt Wizard tool crafts kickass prompts for you. Try it now!
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="/" className="bg-custom-yellow text-gray-900">Prompt Wizard</Button>
+                <Button href="/" className="bg-custom-yellow hover:bg-custom-darkyellow text-gray-900">Prompt Wizard 🪄</Button>
               </div>
             </div>
           </div>
