@@ -15,7 +15,7 @@ export const navigation = [
   {
     title: 'Introduction',
     links: [
-      { title: 'Welcome', href: '/' },
+      { title: 'Home Page', href: '/' },
       { title: 'How to Use ChatGPT', href: '/docs/installation' },
     ],
   },

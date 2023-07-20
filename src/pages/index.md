@@ -1,114 +1,61 @@
 ---
-title: Welcome to Prompt Engineering Patterns
+title: Welcome to Prompt Engineering Patterns!
 pageTitle: Prompt Engineering Patterns
 description: Learn about prompt engineering patterns.
 ---
 
-Prompt engineering is the process of designing and refining input prompts to obtain desired responses from AI models. {% .lead %}
+Just as design patterns are solutions to common problems in software design, prompt engineering patterns are solutions to common problems in prompt design. {% .lead %}
 
 {% quick-links %}
 
-{% quick-link title="Installation" icon="installation" href="/" description="Step-by-step guides to setting up your system and installing the library." /%}
+{% quick-link title="Prompt Wizard" icon="installation" href="/" description="Craft your next prompt with this interactive tool built with GPT-4." /%}
 
-{% quick-link title="Architecture guide" icon="presets" href="/" description="Learn how the internals work and contribute." /%}
-
-{% quick-link title="Plugins" icon="plugins" href="/" description="Extend the library with third-party plugins or write your own." /%}
-
-{% quick-link title="API reference" icon="theming" href="/" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
+{% quick-link title="How to Use ChatGPT" icon="presets" href="/" description="Learn the basics of ChatGPT and prompt engineering." /%}
 
 {% /quick-links %}
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste.
+All prompt patterns are either `Context Patterns`, or `Response Patterns`.
 
 ---
 
-## Quick start
+## Context Patterns
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
+`Context` refers to the entire conversational history which, along with the prompt, act as the input to the AI model. Context Patterns are concerned with manipulating the context of a prompt to steer the AI model and are useful for when you don't know the expected outcome. Like asking a question to be able to ask a better question.
 
-### Installing dependencies
+{% quick-links %}
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+{% quick-link title="Conversational Funnel" icon="plugins" href="/" description="Useful for when you don't know the precise question to ask." /%}
 
-```shell
-npm install @tailwindlabs/cache-advance
-```
+{% quick-link title="Set Own Goal" icon="plugins" href="/" description="Asks the model to define success conditions which become part of future context." /%}
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
+{% quick-link title="Compression" icon="plugins" href="/" description="Get the most out of a limited context window by asking the model to compress the input." /%}
 
-{% callout type="warning" title="Oh no! Something bad happened!" %}
-This is what a disclaimer message looks like. You might want to include inline `code` in it. Or maybe you’ll want to include a [link](/) in it. I don’t think we should get too carried away with other scenarios like lists or tables — that would be silly.
-{% /callout %}
+{% quick-link title="Tree Search" icon="plugins" href="/" description="Searching through prompts and responses to achieve a specific context, unknown at the start." /%}
 
-### Configuring the library
-
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
-
-```js
-// cache-advance.config.js
-export default {
-  strategy: 'predictive',
-  engine: {
-    cpus: 12,
-    backups: ['./storage/cache.wtf'],
-  },
-}
-```
-
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
-
-{% callout title="You should know!" %}
-This is what a disclaimer message looks like. You might want to include inline `code` in it. Or maybe you’ll want to include a [link](/) in it. I don’t think we should get too carried away with other scenarios like lists or tables — that would be silly.
-{% /callout %}
+{% /quick-links %}
 
 ---
 
-## Basic usage
+## Response Patterns
 
-Praesentium laudantium magni. Consequatur reiciendis aliquid nihil iusto ut in et. Quisquam ut et aliquid occaecati. Culpa veniam aut et voluptates amet perspiciatis. Qui exercitationem in qui. Vel qui dignissimos sit quae distinctio.
+The `response` is the text your AI model gives you after you prompt it. Response Patterns are concerned with steering an AI model towards structured output known to the user beforehand. Great for when you know what you want the model to do.
 
-### Your first cache
+{% quick-links %}
 
-Minima vel non iste debitis. Consequatur repudiandae et quod accusamus sit molestias consequatur aperiam. Et sequi ipsa eum voluptatibus ipsam. Et quisquam ut.
+{% quick-link title="Google 2.0" icon="plugins" href="/" description="Boring but effective" /%}
 
-Qui quae esse aspernatur fugit possimus. Quam sed molestiae temporibus. Eum perferendis dignissimos provident ea et. Et repudiandae quasi accusamus consequatur dolore nobis. Quia reiciendis necessitatibus a blanditiis iste quia. Ut quis et amet praesentium sapiente.
+{% quick-link title="Who - What - How" icon="plugins" href="/" description="The swiss army knife of prompts. Very versatile." /%}
 
-Atque eos laudantium. Optio odit aspernatur consequuntur corporis soluta quidem sunt aut doloribus. Laudantium assumenda commodi.
+{% quick-link title="Do ___ with ___" icon="plugins" href="/" description="Great for code review or revision. Asks model to operate on given text." /%}
 
-### Clearing the cache
+{% quick-link title="Do ___ with ___ like ___ " icon="plugins" href="/" description="Same but gives an example for formatting purposes. Examples help steer." /%}
 
-Vel aut velit sit dolor aut suscipit at veritatis voluptas. Laudantium tempore praesentium. Qui ut voluptatem.
+{% quick-link title="Interactive Mode" icon="plugins" href="/" description="Have your model interview you! Or play a game. Broadly speaking it's any pattern where the goal is to have the AI model as the user a question and wait for a response (for example)." /%}
+ 
+{% quick-link title="Explain Your Thought Process" icon="plugins" href="/" description="Increases accuracy and explanabilty to model responses." /%}
 
-Ea est autem fugiat velit esse a alias earum. Dolore non amet soluta eos libero est. Consequatur qui aliquam qui odit eligendi ut impedit illo dignissimos.
+{% quick-link title="Creative Factory" icon="plugins" href="/" description="Asks model to generate creative stuff." /%}
 
-Ut dolore qui aut nam. Natus temporibus nisi voluptatum labore est ex error vel officia. Vero repellendus ut. Suscipit voluptate et placeat. Eius quo corporis ab et consequatur quisquam. Nihil officia facere dolorem occaecati alias deleniti deleniti in.
+{% quick-link title="One to Many" icon="plugins" href="/" description="A way of chunking output to get around response limits." /%}
 
-### Adding middleware
-
-Officia nobis tempora maiores id iusto magni reprehenderit velit. Quae dolores inventore molestiae perspiciatis aut. Quis sequi officia quasi rem officiis officiis. Nesciunt ut cupiditate. Sunt aliquid explicabo enim ipsa eum recusandae. Vitae sunt eligendi et non beatae minima aut.
-
-Harum perferendis aut qui quibusdam tempore laboriosam voluptatum qui sed. Amet error amet totam exercitationem aut corporis accusantium dolorum. Perspiciatis aut animi et. Sed unde error ut aut rerum.
-
-Ut quo libero aperiam mollitia est repudiandae quaerat corrupti explicabo. Voluptas accusantium sed et doloribus voluptatem fugiat a mollitia. Numquam est magnam dolorem asperiores fugiat. Soluta et fuga amet alias temporibus quasi velit. Laudantium voluptatum perspiciatis doloribus quasi facere. Eveniet deleniti veniam et quia veritatis minus veniam perspiciatis.
-
----
-
-## Getting help
-
-Consequuntur et aut quisquam et qui consequatur eligendi. Necessitatibus dolorem sit. Excepturi cumque quibusdam soluta ullam rerum voluptatibus. Porro illo sequi consequatur nisi numquam nisi autem. Ut necessitatibus aut. Veniam ipsa voluptatem sed.
-
-### Submit an issue
-
-Inventore et aut minus ut voluptatem nihil commodi doloribus consequatur. Facilis perferendis nihil sit aut aspernatur iure ut dolores et. Aspernatur odit dignissimos. Aut qui est sint sint.
-
-Facere aliquam qui. Dolorem officia ipsam adipisci qui molestiae. Error voluptatem reprehenderit ex.
-
-Consequatur enim quia maiores aperiam et ipsum dicta. Quam ut sit facere sit quae. Eligendi veritatis aut ut veritatis iste ut adipisci illo.
-
-### Join the community
-
-Praesentium facilis iste aliquid quo quia a excepturi. Fuga reprehenderit illo sequi voluptatem voluptatem omnis. Id quia consequatur rerum consectetur eligendi et omnis. Voluptates iusto labore possimus provident praesentium id vel harum quisquam. Voluptatem provident corrupti.
-
-Eum et ut. Qui facilis est ipsa. Non facere quia sequi commodi autem. Dicta autem sit sequi omnis impedit. Eligendi amet dolorum magnam repudiandae in a.
-
-Molestiae iusto ut exercitationem dolorem unde iusto tempora atque nihil. Voluptatem velit facere laboriosam nobis ea. Consequatur rerum velit ipsum ipsam. Et qui saepe consequatur minima laborum tempore voluptatum et. Quia eveniet eaque sequi consequatur nihil eos.
+{% /quick-links %}

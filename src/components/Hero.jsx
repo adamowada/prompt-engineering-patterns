@@ -46,7 +46,7 @@ export function Hero() {
                 Can&apos;t write the perfect prompt? Our interactive Prompt Wizard tool crafts kickass prompts for you. Try it now!
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="/" className="bg-custom-yellow hover:bg-custom-darkyellow text-gray-900">Prompt Wizard 🪄</Button>
+                <Button href="/" title="You're a prompt engineer Harry!" className="bg-custom-yellow hover:bg-custom-darkyellow text-gray-900">Prompt Wizard 🪄</Button>
               </div>
             </div>
           </div>
