@@ -24,13 +24,13 @@ All prompt patterns are either `Context Patterns`, or `Response Patterns`.
 
 {% quick-links %}
 
-{% quick-link title="Conversational Funnel" icon="plugins" href="/" description="Useful for when you don't know the precise question to ask." /%}
+{% quick-link title="Conversational Funnel" icon="funnel" href="/" description="Useful for when you don't know the precise question to ask." /%}
 
-{% quick-link title="Set Own Goal" icon="plugins" href="/" description="Asks the model to define success conditions which become part of future context." /%}
+{% quick-link title="Set Own Goal" icon="target" href="/" description="Asks the model to define success conditions which become part of future context." /%}
 
-{% quick-link title="Compression" icon="plugins" href="/" description="Get the most out of a limited context window by asking the model to compress the input." /%}
+{% quick-link title="Compression" icon="compress" href="/" description="Get the most out of a limited context window by asking the model to compress the input." /%}
 
-{% quick-link title="Tree Search" icon="plugins" href="/" description="Searching through prompts and responses to achieve a specific context, unknown at the start." /%}
+{% quick-link title="Tree Search" icon="tree" href="/" description="Searching through prompts and responses to achieve a specific context, unknown at the start." /%}
 
 {% /quick-links %}
 
@@ -42,13 +42,13 @@ The `response` is the text your AI model gives you after you prompt it. Response
 
 {% quick-links %}
 
-{% quick-link title="Google 2.0" icon="plugins" href="/" description="Boring but effective" /%}
+{% quick-link title="Google 2.0" icon="google" href="/" description="Boring but effective." /%}
 
-{% quick-link title="Who - What - How" icon="plugins" href="/" description="The swiss army knife of prompts. Very versatile." /%}
+{% quick-link title="Who - What - How" icon="who" href="/" description="The swiss army knife of prompts. Very versatile." /%}
 
-{% quick-link title="Do ___ with ___" icon="plugins" href="/" description="Great for code review or revision. Asks model to operate on given text." /%}
+{% quick-link title="Do ___ with ___" icon="dowith" href="/" description="Great for code review or revision. Asks model to operate on given text." /%}
 
-{% quick-link title="Do ___ with ___ like ___ " icon="plugins" href="/" description="Same but gives an example for formatting purposes. Examples help steer." /%}
+{% quick-link title="Do ___ with ___ like ___ " icon="dowithlike" href="/" description="Same as `Do ___ with ___` but gives an example for formatting purposes. Examples help steer." /%}
 
 {% quick-link title="Interactive Mode" icon="plugins" href="/" description="Have your model interview you! Or play a game. Broadly speaking it's any pattern where the goal is to have the AI model as the user a question and wait for a response (for example)." /%}
  

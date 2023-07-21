@@ -7,6 +7,14 @@ import { PluginsIcon } from '@/components/icons/PluginsIcon'
 import { PresetsIcon } from '@/components/icons/PresetsIcon'
 import { ThemingIcon } from '@/components/icons/ThemingIcon'
 import { WarningIcon } from '@/components/icons/WarningIcon'
+import { FunnelIcon } from '@/components/icons/FunnelIcon'
+import { TargetIcon } from '@/components/icons/TargetIcon'
+import { CompressIcon } from '@/components/icons/CompressIcon'
+import { TreeIcon } from '@/components/icons/TreeIcon'
+import { GoogleIcon } from '@/components/icons/GoogleIcon'
+import { WhoIcon } from '@/components/icons/WhoIcon'
+import { DoWithIcon } from '@/components/icons/DoWithIcon'
+import { DoWithLikeIcon } from '@/components/icons/DoWithLikeIcon'
 
 const icons = {
   installation: InstallationIcon,
@@ -15,6 +23,14 @@ const icons = {
   theming: ThemingIcon,
   lightbulb: LightbulbIcon,
   warning: WarningIcon,
+  funnel: FunnelIcon,
+  target: TargetIcon,
+  compress: CompressIcon,
+  tree: TreeIcon,
+  google: GoogleIcon,
+  who: WhoIcon,
+  dowith: DoWithIcon,
+  dowithlike: DoWithLikeIcon,
 }
 
 const iconStyles = {
