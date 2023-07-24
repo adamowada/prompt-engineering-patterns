@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
@@ -10,6 +10,12 @@ import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
+import { WizardForm } from '@/components/WizardForm'
+
+import React from 'react';
+import { animated, useSpring } from 'react-spring';
+import useMeasure from 'react-use-measure';
+
 
 export const navigation = [
   {
@@ -165,6 +171,7 @@ function useTableOfContents(tableOfContents) {
 }
 
 export function Layout({ children, title, tableOfContents }) {
+  let [showWizardForm, updateShowWizardForm] = useState(false)
   let router = useRouter()
   let isHomePage = router.pathname === '/'
   let allLinks = navigation.flatMap((section) => section.links)
@@ -186,11 +193,32 @@ export function Layout({ children, title, tableOfContents }) {
     return section.children.findIndex(isActive) > -1
   }
 
+  function handlePromptWizard(event) {
+    event.preventDefault();
+    updateShowWizardForm(!showWizardForm);
+  }
+
+  const [ref, { height }] = useMeasure();
+ 
+  const styles = useSpring({
+    overflow: 'hidden',
+    height: showWizardForm ? height : 0,
+    from: { height: showWizardForm ? 0 : height },
+    config: { duration: 500 },
+  });
+
   return (
     <>
       <Header navigation={navigation} />
 
-      {isHomePage && <Hero />}
+      {isHomePage && <Hero handlePromptWizard={handlePromptWizard} showWizardForm={showWizardForm} />}
+
+      <animated.div style={styles}>
+        <div ref={ref}>
+          <WizardForm />
+        </div>
+      </animated.div>
+
 
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">

@@ -32,7 +32,7 @@ function TrafficLightsIcon(props) {
   )
 }
 
-export function Hero() {
+export function Hero({ handlePromptWizard, showWizardForm }) {
   return (
     <div className="overflow-hidden bg-gradient-to-r from-custom-darkblue to-custom-blue dark:-mb-32 dark:mt-[-4.5rem] dark:pb-32 dark:pt-[4.5rem] dark:lg:mt-[-4.75rem] dark:lg:pt-[4.75rem]">
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
@@ -46,7 +46,11 @@ export function Hero() {
                 Can&apos;t write the perfect prompt? Our interactive Prompt Wizard tool crafts kickass prompts for you. Try it now!
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="/" title="You're a prompt engineer Harry!" className="bg-custom-yellow hover:bg-custom-darkyellow text-gray-900">Prompt Wizard 🪄</Button>
+                {
+                showWizardForm  
+                ? <Button href="/" onClick={handlePromptWizard} title="You're a prompt engineer Harry!" className="bg-custom-yellow hover:bg-custom-darkyellow text-gray-900">Hide Wizard 🎩</Button>
+                : <Button href="/" onClick={handlePromptWizard} title="You're a prompt engineer Harry!" className="bg-custom-yellow hover:bg-custom-darkyellow text-gray-900">Prompt Wizard 🪄</Button>
+                }
               </div>
             </div>
           </div>
