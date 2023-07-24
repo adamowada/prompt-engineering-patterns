@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 
-export function Prose({ as: Component = 'div', className, ...props }) {
+export function Prose({ as: Component = 'div', className, handlePromptWizard, ...props }) {
+  // console.log("handlePromptWizard is:", handlePromptWizard);
   return (
     <Component
       className={clsx(

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
+import { useState } from 'react'
 
 import { Layout } from '@/components/Layout'
 
@@ -49,6 +50,8 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
 }
 
 export default function App({ Component, pageProps }) {
+
+
   let title = pageProps.markdoc?.frontmatter.title
 
   let pageTitle =
@@ -61,6 +64,8 @@ export default function App({ Component, pageProps }) {
     ? collectHeadings(pageProps.markdoc.content)
     : []
 
+
+
   return (
     <>
       <Head>
@@ -68,7 +73,7 @@ export default function App({ Component, pageProps }) {
         {description && <meta name="description" content={description} />}
       </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
-        <Component {...pageProps} />
+        <Component {...pageProps}/>
       </Layout>
     </>
   )

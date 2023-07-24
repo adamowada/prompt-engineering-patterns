@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, useRef } from 'react'
+import { useCallback, useEffect, useState, React } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
@@ -12,7 +12,6 @@ import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 import { WizardForm } from '@/components/WizardForm'
 
-import React from 'react';
 import { animated, useSpring } from 'react-spring';
 import useMeasure from 'react-use-measure';
 
@@ -170,7 +169,7 @@ function useTableOfContents(tableOfContents) {
   return currentSection
 }
 
-export function Layout({ children, title, tableOfContents }) {
+export function Layout({ children, title, tableOfContents, }) {
   let [showWizardForm, setShowWizardForm] = useState(false)
   let [initialLoad, setInitialLoad] = useState(true)
   let router = useRouter()
@@ -183,6 +182,16 @@ export function Layout({ children, title, tableOfContents }) {
     section.links.find((link) => link.href === router.pathname)
   )
   let currentSection = useTableOfContents(tableOfContents)
+
+  useEffect(() => {
+    if (isHomePage) {
+      const showForm = router.query.showWizardForm;
+      if (showForm === 'true') {
+        setInitialLoad(false)
+        setShowWizardForm(true);
+      }
+    }
+  }, [router, isHomePage]);
 
   function isActive(section) {
     if (section.id === currentSection) {
@@ -217,7 +226,7 @@ export function Layout({ children, title, tableOfContents }) {
 
       <animated.div style={wizardFormStyles} className="shadow-bottom">
         <div ref={ref}>
-          <WizardForm initialLoad={initialLoad}/>
+          <WizardForm initialLoad={initialLoad} />
         </div>
       </animated.div>
 
