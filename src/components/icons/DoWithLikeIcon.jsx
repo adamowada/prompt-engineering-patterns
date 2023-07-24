@@ -22,11 +22,11 @@ export function DoWithLikeIcon({ id, color }) {
           xmlns="http://www.w3.org/2000/svg"
           fill="#000000"
         >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
           <g
             id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></g>
           <g id="SVGRepo_iconCarrier">
             {' '}
@@ -37,9 +37,9 @@ export function DoWithLikeIcon({ id, color }) {
                 d="M7,4,4.33,7,3,5.5"
                 fill="none"
                 stroke="#000000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
               ></path>{' '}
               <path
                 id="primary-2"
@@ -47,9 +47,9 @@ export function DoWithLikeIcon({ id, color }) {
                 d="M3,11.5,4.33,13,7,10"
                 fill="none"
                 stroke="#000000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
               ></path>{' '}
               <path
                 id="primary-3"
@@ -57,9 +57,9 @@ export function DoWithLikeIcon({ id, color }) {
                 d="M3,17.5,4.33,19,7,16"
                 fill="none"
                 stroke="#000000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
               ></path>{' '}
               <path
                 id="primary-4"
@@ -67,9 +67,9 @@ export function DoWithLikeIcon({ id, color }) {
                 d="M11,6H21M11,12H21M11,18H21"
                 fill="none"
                 stroke="#000000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
               ></path>{' '}
             </g>{' '}
           </g>

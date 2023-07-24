@@ -171,7 +171,8 @@ function useTableOfContents(tableOfContents) {
 }
 
 export function Layout({ children, title, tableOfContents }) {
-  let [showWizardForm, updateShowWizardForm] = useState(false)
+  let [showWizardForm, setShowWizardForm] = useState(false)
+  let [initialLoad, setInitialLoad] = useState(true)
   let router = useRouter()
   let isHomePage = router.pathname === '/'
   let allLinks = navigation.flatMap((section) => section.links)
@@ -195,12 +196,13 @@ export function Layout({ children, title, tableOfContents }) {
 
   function handlePromptWizard(event) {
     event.preventDefault();
-    updateShowWizardForm(!showWizardForm);
+    setInitialLoad(false)
+    setShowWizardForm(!showWizardForm);
   }
 
   const [ref, { height }] = useMeasure();
  
-  const styles = useSpring({
+  const wizardFormStyles = useSpring({
     overflow: 'hidden',
     height: showWizardForm ? height : 0,
     from: { height: showWizardForm ? 0 : height },
@@ -213,9 +215,9 @@ export function Layout({ children, title, tableOfContents }) {
 
       {isHomePage && <Hero handlePromptWizard={handlePromptWizard} showWizardForm={showWizardForm} />}
 
-      <animated.div style={styles}>
+      <animated.div style={wizardFormStyles} className="shadow-bottom">
         <div ref={ref}>
-          <WizardForm />
+          <WizardForm initialLoad={initialLoad}/>
         </div>
       </animated.div>
 
