@@ -8,7 +8,7 @@ Just as design patterns are solutions to common problems in software design, pro
 
 {% quick-links handlePromptWizard="test" %}
 
-{% quick-link title="Prompt Wizard" icon="installation" href="/?showWizardForm=true" description="Craft your next prompt with this interactive tool built with GPT-4." /%}
+{% quick-link title="Prompt Wizard" icon="installation" href="/?showWizardForm=true" description="Craft your next prompt with this interactive tool built with GPT-3.5-turbo." /%}
 
 {% quick-link title="How to Use ChatGPT" icon="presets" href="/" description="Learn the basics of ChatGPT and prompt engineering." /%}
 

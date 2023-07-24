@@ -43,7 +43,7 @@ export function Hero({ handlePromptWizard, showWizardForm }) {
                 Master ChatGPT with Ease
               </p>
               <p className="mt-3 text-2xl tracking-tight text-white">
-                Can&apos;t write the perfect prompt? Our interactive Prompt Wizard tool crafts kickass prompts for you. Try it now!
+                Can&apos;t write the perfect prompt? Our interactive Prompt Wizard tool crafts awesome prompts for you. Try it now!
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                 {

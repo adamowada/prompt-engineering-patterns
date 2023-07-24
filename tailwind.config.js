@@ -36,7 +36,13 @@ module.exports = {
         'custom-blue':'#00B8B0',
         'custom-darkblue':'#056D75',
       },
+      boxShadow: {
+        'bottom': '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+      }
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms')
+  ],
 }
