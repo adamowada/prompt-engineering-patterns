@@ -9,7 +9,7 @@ const openai = new OpenAIApi(
 export default async function handler(req, res) {
   console.log('Requesting ChatGPT prompt or question', req.body)
   // const { language, topic, notes } = req.body
-  const { formData } = req.body
+  const { conversationData } = req.body
 
   try {
     const completionRequest = {
@@ -73,7 +73,7 @@ export default async function handler(req, res) {
         },
         {
           role: 'user',
-          content: `${formData}`
+          content: `${conversationData[0].userResponse}`
         },
       ],
     }

@@ -48,8 +48,8 @@ export function Hero({ handlePromptWizard, showWizardForm }) {
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                 {
                 showWizardForm  
-                ? <Button href="/" onClick={handlePromptWizard} title="You're a prompt engineer Harry!" className="bg-custom-yellow hover:bg-custom-darkyellow text-gray-900">Hide Wizard 🎩</Button>
-                : <Button href="/" onClick={handlePromptWizard} title="You're a prompt engineer Harry!" className="bg-custom-yellow hover:bg-custom-darkyellow text-gray-900">Prompt Wizard 🪄</Button>
+                ? <Button href="/" onClick={handlePromptWizard} >Hide Wizard 🎩</Button>
+                : <Button href="/" onClick={handlePromptWizard} title="You're a prompt engineer Harry!" >Prompt Wizard 🪄</Button>
                 }
               </div>
             </div>
