@@ -14,6 +14,7 @@ export default async function handler(req, res) {
   try {
     const completionRequest = {
       model: 'gpt-3.5-turbo-16k',
+      // model: 'gpt-4',
       messages: [
         {
           role: 'system',
@@ -61,7 +62,7 @@ export default async function handler(req, res) {
         },
         {
           role: 'user',
-          content: `From now on, I would like you to ask me questions to write the best prompt possible for ChatGPT and my goals. When you have enough information to formulate a prompt, write a prompt for the user to give to ChatGPT in the form of "Prompt: <generated_prompt>". Ask one question at a time in the form of "Question <int>:" and explain your reasoning along the way.`,
+          content: `From now on, I would like you to ask me questions to write the best prompt possible for ChatGPT and my goals. When you have enough information to formulate a prompt, write a prompt for the user to give to ChatGPT in the form of "Prompt: <generated_prompt>". Ensure the prompt is in "I" form, as I will be entering what you give me verbatim. Ask one question at a time in the form of "Question <int>:" and explain your reasoning along the way.`,
         },
       ],
     }
