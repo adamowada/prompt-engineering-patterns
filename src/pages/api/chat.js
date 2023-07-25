@@ -63,19 +63,18 @@ export default async function handler(req, res) {
           role: 'user',
           content: `From now on, I would like you to ask me questions to write the best prompt possible for ChatGPT and my goals. When you have enough information to formulate a prompt, write a prompt for the user to give to ChatGPT in the form of "Prompt: <generated_prompt>". Ask one question at a time in the form of "Question <int>:" and explain your reasoning along the way.`,
         },
-        {
-          role: 'assistant',
-          content: `Certainly! Let's start by gathering some information to formulate a prompt for ChatGPT.
-
-          Question 1: What is the main goal or objective you would like to achieve with ChatGPT?
-          
-          By understanding your goal, we can tailor the prompt to align with your specific needs and guide ChatGPT towards providing relevant and valuable responses. Please provide as much detail as possible about your objective.`
-        },
-        {
-          role: 'user',
-          content: `${conversationData[0].userResponse}`
-        },
       ],
+    }
+
+    for (const QuestionResponse of conversationData) {
+      completionRequest.messages.push({
+        role: 'assistant',
+        content: `${QuestionResponse.content}`
+      })
+      completionRequest.messages.push({
+        role: 'user',
+        content: `${QuestionResponse.userResponse}`
+      })
     }
 
     const questionPrompt = await (async () => {
