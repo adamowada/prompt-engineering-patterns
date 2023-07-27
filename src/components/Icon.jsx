@@ -15,6 +15,10 @@ import { GoogleIcon } from '@/components/icons/GoogleIcon'
 import { WhoIcon } from '@/components/icons/WhoIcon'
 import { DoWithIcon } from '@/components/icons/DoWithIcon'
 import { DoWithLikeIcon } from '@/components/icons/DoWithLikeIcon'
+import { InteractiveIcon } from '@/components/icons/InteractiveIcon'
+import { ThoughtProcessIcon } from '@/components/icons/ThoughtProcessIcon'
+import { FactoryIcon } from '@/components/icons/FactoryIcon'
+import { OneToManyIcon } from '@/components/icons/OneToManyIcon'
 
 const icons = {
   installation: InstallationIcon,
@@ -31,6 +35,10 @@ const icons = {
   who: WhoIcon,
   dowith: DoWithIcon,
   dowithlike: DoWithLikeIcon,
+  interactive: InteractiveIcon,
+  thoughtprocess: ThoughtProcessIcon,
+  factory: FactoryIcon,
+  onetomany: OneToManyIcon,
 }
 
 const iconStyles = {

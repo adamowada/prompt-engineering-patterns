@@ -50,12 +50,12 @@ The `response` is the text your AI model gives you after you prompt it. Response
 
 {% quick-link title="Do ___ with ___ like ___ " icon="dowithlike" href="/" description="Same as `Do ___ with ___` but gives an example for formatting purposes. Examples help steer." /%}
 
-{% quick-link title="Interactive Mode" icon="plugins" href="/" description="Have your model interview you! Or play a game. Broadly speaking it's any pattern where the goal is to have the AI model as the user a question and wait for a response (for example)." /%}
+{% quick-link title="Interactive Mode" icon="interactive" href="/" description="Have your model interview you! Or play a game. Broadly speaking it's any pattern where the goal is to have the AI model as the user a question and wait for a response (for example)." /%}
  
-{% quick-link title="Explain Your Thought Process" icon="plugins" href="/" description="Increases accuracy and explanabilty to model responses." /%}
+{% quick-link title="Explain Your Thought Process" icon="thoughtprocess" href="/" description="Increases accuracy and explanabilty to model responses." /%}
 
-{% quick-link title="Creative Factory" icon="plugins" href="/" description="Asks model to generate creative stuff." /%}
+{% quick-link title="Creative Factory" icon="factory" href="/" description="Asks model to generate creative stuff." /%}
 
-{% quick-link title="One to Many" icon="plugins" href="/" description="A way of chunking output to get around response limits." /%}
+{% quick-link title="One to Many" icon="onetomany" href="/" description="A way of chunking output to get around response limits." /%}
 
 {% /quick-links %}
