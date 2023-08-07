@@ -20,35 +20,35 @@ export const navigation = [
     title: 'Introduction',
     links: [
       { title: 'Home Page', href: '/' },
-      { title: 'How to Use ChatGPT', href: '/docs/how-to-use-chatgpt' },
+      { title: 'How to Use ChatGPT', href: '/patterns/how-to-use-chatgpt' },
     ],
   },
   {
     title: 'Response Patterns',
     links: [
-      { title: 'Google 2.0', href: '/docs/understanding-caching' },
-      { title: 'Who - What - How', href: '/docs/predicting-user-behavior', },
-      { title: 'Do ___ with ___', href: '/docs/basics-of-time-travel' },
+      { title: 'Google 2.0', href: '/patterns/understanding-caching' },
+      { title: 'Who - What - How', href: '/patterns/who-what-how', },
+      { title: 'Do ___ with ___', href: '/patterns/basics-of-time-travel' },
       {
         title: 'Do ___ with ___ like ___',
-        href: '/docs/introduction-to-string-theory',
+        href: '/patterns/introduction-to-string-theory',
       },
-      { title: 'Interactive Mode', href: '/docs/the-butterfly-effect' },
-      { title: 'Explain Your Thought Process', href: '/docs/writing-plugins' },
-      { title: 'Creative Factory', href: '/docs/neuralink-integration' },
-      { title: 'One to Many', href: '/docs/temporal-paradoxes' },
+      { title: 'Interactive Mode', href: '/patterns/the-butterfly-effect' },
+      { title: 'Explain Your Thought Process', href: '/patterns/writing-plugins' },
+      { title: 'Creative Factory', href: '/patterns/neuralink-integration' },
+      { title: 'One to Many', href: '/patterns/temporal-paradoxes' },
     ],
   },
   {
     title: 'Context Patterns',
     links: [
-      { title: 'Conversational Funnel', href: '/docs/testing' },
-      { title: 'Set Own Goal', href: '/docs/compile-time-caching' },
+      { title: 'Conversational Funnel', href: '/patterns/testing' },
+      { title: 'Set Own Goal', href: '/patterns/compile-time-caching' },
       {
         title: 'Compression',
-        href: '/docs/predictive-data-generation',
+        href: '/patterns/predictive-data-generation',
       },
-      { title: 'Tree Search', href: '/docs/cacheadvance-predict' },
+      { title: 'Tree Search', href: '/patterns/cacheadvance-predict' },
     ],
   },
   // {

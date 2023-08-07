@@ -7,12 +7,6 @@ Create account. Login. Start a new chat. What do the buttons do? shift + enter. 
 
 ---
 
-## Prompt Maker
-
-{% prompt-maker labels=["who", "what", "how"] pattern="Imagine you are a {who}. Please do {what}. Respond {how}." /%}
-
----
-
 ## Quis vel iste dicta
 
 Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
