@@ -27,6 +27,12 @@ export function PromptMaker({ labels, pattern }) {
       }
     })
 
+    // Use regex to remove any sentence from finalPattern that includes a label
+    labels.forEach((label) => {
+      let sentenceRegex = new RegExp('([^\\.!?]*\\{' + label + '\\}[^\\.!?]*[\\.!?])', 'g')
+      finalPattern = finalPattern.replace(sentenceRegex, '')
+    })
+
     try {
       const response = await axios.post('/api/prompt-maker', { finalPattern })
       const correctedGrammar = response.data.correctedGrammar[0]
