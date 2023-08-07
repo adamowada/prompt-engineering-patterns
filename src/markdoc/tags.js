@@ -36,6 +36,7 @@ const tags = {
     render: PromptMaker,
     attributes: {
       labels: { type: Array},
+      pattern: { type: String},
     },
   },
   'quick-links': {
