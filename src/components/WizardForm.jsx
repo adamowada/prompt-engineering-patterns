@@ -37,7 +37,7 @@ By understanding your goal, we can tailor the prompt to align with your specific
     event.preventDefault()
     setLoading(true)
     try {
-      const response = await axios.post('/api/chat', {conversationData})
+      const response = await axios.post('/api/prompt-wizard', {conversationData})
       const questionPrompt = response.data.questionPrompts[0].questionPrompt // string of the next question or prompt from chatgpt
 
       console.log("questionPrompt received from ChatGPT is:", questionPrompt)

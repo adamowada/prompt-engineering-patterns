@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import axios from 'axios'
 import { Button } from '@/components/Button'
 
 export function PromptMaker({ labels, pattern }) {
   const [inputValues, setInputValues] = useState({})
+  let [loading, setLoading] = useState(false)
+  let [receivedPrompt, setReceivedPrompt] = useState('')
 
   const handleChange = (event) => {
     setInputValues({
@@ -11,8 +14,9 @@ export function PromptMaker({ labels, pattern }) {
     })
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    setLoading(true)
 
     let finalPattern = pattern
 
@@ -23,7 +27,16 @@ export function PromptMaker({ labels, pattern }) {
       }
     })
 
-    console.log(finalPattern)
+    try {
+      const response = await axios.post('/api/prompt-maker', { finalPattern })
+      const correctedGrammar = response.data.correctedGrammar[0]
+
+      setReceivedPrompt(correctedGrammar)
+      setLoading(false)
+    } catch (error) {
+      console.error(error)
+      setLoading(false)
+    }
   }
 
   return (
@@ -56,9 +69,22 @@ export function PromptMaker({ labels, pattern }) {
           </div>
         )
       })}
-      <Button className="text-md mx-auto my-4 w-2/4 py-3 lg:my-4 lg:w-1/3">
-        Submit
+      <Button
+        disabled={loading}
+        className="text-md mx-auto my-4 w-2/4 py-3 lg:my-4 lg:w-1/3"
+      >
+        {loading ? 'Loading...' : 'Submit'}
       </Button>
+      {receivedPrompt && (
+        <>
+          <h2 className="text-md font-semibold leading-7 text-custom-darkblue">
+            Here&apos;s your prompt!
+          </h2>
+          <p className="mt-1 text-md leading-6 text-gray-600">
+            {receivedPrompt}
+          </p>
+        </>
+      )}
     </form>
   )
 }

@@ -8,7 +8,6 @@ const openai = new OpenAIApi(
 
 export default async function handler(req, res) {
   console.log('Requesting ChatGPT prompt or question', req.body)
-  // const { language, topic, notes } = req.body
   const { conversationData } = req.body
 
   try {
