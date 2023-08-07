@@ -9,7 +9,7 @@ Create account. Login. Start a new chat. What do the buttons do? shift + enter. 
 
 ## Prompt Maker
 
-{% prompt-maker labels=["who", "what", "how"] pattern="Imagine you are a {who}. Do {what}. Respond {how}." /%}
+{% prompt-maker labels=["who", "what", "how"] pattern="Imagine you are a {who}. Please do {what}. Respond {how}." /%}
 
 ---
 

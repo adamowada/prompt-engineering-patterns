@@ -4,8 +4,8 @@ import { Button } from '@/components/Button'
 
 export function PromptMaker({ labels, pattern }) {
   const [inputValues, setInputValues] = useState({})
-  let [loading, setLoading] = useState(false)
-  let [receivedPrompt, setReceivedPrompt] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [receivedPrompt, setReceivedPrompt] = useState('')
 
   const handleChange = (event) => {
     setInputValues({
@@ -22,20 +22,28 @@ export function PromptMaker({ labels, pattern }) {
 
     labels.forEach((label) => {
       if (inputValues[label]) {
-        let regex = new RegExp('\\{' + label + '\\}', 'g')
+        const regex = new RegExp('\\{' + label + '\\}', 'g')
         finalPattern = finalPattern.replace(regex, inputValues[label])
       }
     })
 
     // Use regex to remove any sentence from finalPattern that includes a label
     labels.forEach((label) => {
-      let sentenceRegex = new RegExp('([^\\.!?]*\\{' + label + '\\}[^\\.!?]*[\\.!?])', 'g')
+      const sentenceRegex = new RegExp(
+        '([^\\.!?]*\\{' + label + '\\}[^\\.!?]*[\\.!?])',
+        'g'
+      )
       finalPattern = finalPattern.replace(sentenceRegex, '')
     })
 
     try {
       const response = await axios.post('/api/prompt-maker', { finalPattern })
-      const correctedGrammar = response.data.correctedGrammar[0]
+      let correctedGrammar = response.data.correctedGrammar[0]
+
+      // Use regex to remove double quotes at the start and end of correctedGrammar
+      if (correctedGrammar.startsWith('"') && correctedGrammar.endsWith('"')) {
+        correctedGrammar = correctedGrammar.replace(/^"|"$/g, '')
+      }
 
       setReceivedPrompt(correctedGrammar)
       setLoading(false)
@@ -86,7 +94,7 @@ export function PromptMaker({ labels, pattern }) {
           <h2 className="text-md font-semibold leading-7 text-custom-darkblue">
             Here&apos;s your prompt!
           </h2>
-          <p className="mt-1 text-md leading-6 text-gray-600">
+          <p className="text-md mt-1 leading-6 text-gray-600">
             {receivedPrompt}
           </p>
         </>

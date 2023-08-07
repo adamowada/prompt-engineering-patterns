@@ -12,8 +12,8 @@ export default async function handler(req, res) {
 
   try {
     const completionRequest = {
-      model: 'gpt-3.5-turbo-16k',
-      // model: 'gpt-4',
+      // model: 'gpt-3.5-turbo-16k',
+      model: 'gpt-4',
       messages: [
         {
           role: 'system',
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
             ${finalPattern}
             \`\`\`
             
-            Do not include commentary or an explanation. Respond with the verbatim correction only.`,
+            Do not include commentary or an explanation. Respond with the verbatim correction only, or the same text if it doesn't need correction.`,
         },
       ],
     }
