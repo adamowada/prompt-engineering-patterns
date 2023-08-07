@@ -1,5 +1,7 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+// PromptMaker
+import { PromptMaker } from '@/components/PromptMaker'
 
 const tags = {
   callout: {
@@ -28,6 +30,13 @@ const tags = {
         <figcaption>{caption}</figcaption>
       </figure>
     ),
+  },
+  'prompt-maker': {
+    selfClosing: true,
+    render: PromptMaker,
+    attributes: {
+      labels: { type: Array},
+    },
   },
   'quick-links': {
     render: QuickLinks,

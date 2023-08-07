@@ -1,9 +1,15 @@
 ---
-title: Installation!
+title: How to Use ChatGPT
 description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 
-Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.
+Create account. Login. Start a new chat. What do the buttons do? shift + enter. Controlls. History. Settings. Using markdown.
+
+---
+
+## Prompt Maker
+
+{% prompt-maker labels=["who", "what", "how", "test"] /%}
 
 ---
 

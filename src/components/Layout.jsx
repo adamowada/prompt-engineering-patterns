@@ -12,65 +12,62 @@ import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 import { WizardForm } from '@/components/WizardForm'
 
-import { animated, useSpring } from 'react-spring';
-import useMeasure from 'react-use-measure';
-
+import { animated, useSpring } from 'react-spring'
+import useMeasure from 'react-use-measure'
 
 export const navigation = [
   {
     title: 'Introduction',
     links: [
       { title: 'Home Page', href: '/' },
-      { title: 'How to Use ChatGPT', href: '/docs/installation' },
+      { title: 'How to Use ChatGPT', href: '/docs/how-to-use-chatgpt' },
     ],
   },
   {
-    title: 'Core concepts',
+    title: 'Response Patterns',
     links: [
-      { title: 'Understanding caching', href: '/docs/understanding-caching' },
+      { title: 'Google 2.0', href: '/docs/understanding-caching' },
+      { title: 'Who - What - How', href: '/docs/predicting-user-behavior', },
+      { title: 'Do ___ with ___', href: '/docs/basics-of-time-travel' },
       {
-        title: 'Predicting user behavior',
-        href: '/docs/predicting-user-behavior',
-      },
-      { title: 'Basics of time-travel', href: '/docs/basics-of-time-travel' },
-      {
-        title: 'Introduction to string theory',
+        title: 'Do ___ with ___ like ___',
         href: '/docs/introduction-to-string-theory',
       },
-      { title: 'The butterfly effect', href: '/docs/the-butterfly-effect' },
+      { title: 'Interactive Mode', href: '/docs/the-butterfly-effect' },
+      { title: 'Explain Your Thought Process', href: '/docs/writing-plugins' },
+      { title: 'Creative Factory', href: '/docs/neuralink-integration' },
+      { title: 'One to Many', href: '/docs/temporal-paradoxes' },
     ],
   },
   {
-    title: 'Advanced guides',
+    title: 'Context Patterns',
     links: [
-      { title: 'Writing plugins', href: '/docs/writing-plugins' },
-      { title: 'Neuralink integration', href: '/docs/neuralink-integration' },
-      { title: 'Temporal paradoxes', href: '/docs/temporal-paradoxes' },
-      { title: 'Testing', href: '/docs/testing' },
-      { title: 'Compile-time caching', href: '/docs/compile-time-caching' },
+      { title: 'Conversational Funnel', href: '/docs/testing' },
+      { title: 'Set Own Goal', href: '/docs/compile-time-caching' },
       {
-        title: 'Predictive data generation',
+        title: 'Compression',
         href: '/docs/predictive-data-generation',
       },
+      { title: 'Tree Search', href: '/docs/cacheadvance-predict' },
     ],
   },
-  {
-    title: 'API reference',
-    links: [
-      { title: 'CacheAdvance.predict()', href: '/docs/cacheadvance-predict' },
-      { title: 'CacheAdvance.flush()', href: '/docs/cacheadvance-flush' },
-      { title: 'CacheAdvance.revert()', href: '/docs/cacheadvance-revert' },
-      { title: 'CacheAdvance.regret()', href: '/docs/cacheadvance-regret' },
-    ],
-  },
-  {
-    title: 'Contributing',
-    links: [
-      { title: 'How to contribute', href: '/docs/how-to-contribute' },
-      { title: 'Architecture guide', href: '/docs/architecture-guide' },
-      { title: 'Design principles', href: '/docs/design-principles' },
-    ],
-  },
+  // {
+  //   title: 'API reference',
+  //   links: [
+      
+  //     { title: 'CacheAdvance.flush()', href: '/docs/cacheadvance-flush' },
+  //     { title: 'CacheAdvance.revert()', href: '/docs/cacheadvance-revert' },
+  //     { title: 'CacheAdvance.regret()', href: '/docs/cacheadvance-regret' },
+  //   ],
+  // },
+  // {
+  //   title: 'Contributing',
+  //   links: [
+  //     { title: 'How to contribute', href: '/docs/how-to-contribute' },
+  //     { title: 'Architecture guide', href: '/docs/architecture-guide' },
+  //     { title: 'Design principles', href: '/docs/design-principles' },
+  //   ],
+  // },
 ]
 
 function GitHubIcon(props) {
@@ -169,7 +166,7 @@ function useTableOfContents(tableOfContents) {
   return currentSection
 }
 
-export function Layout({ children, title, tableOfContents, }) {
+export function Layout({ children, title, tableOfContents }) {
   let [showWizardForm, setShowWizardForm] = useState(false)
   let [initialLoad, setInitialLoad] = useState(true)
   let router = useRouter()
@@ -185,13 +182,13 @@ export function Layout({ children, title, tableOfContents, }) {
 
   useEffect(() => {
     if (isHomePage) {
-      const showForm = router.query.showWizardForm;
+      const showForm = router.query.showWizardForm
       if (showForm === 'true') {
         setInitialLoad(false)
-        setShowWizardForm(true);
+        setShowWizardForm(true)
       }
     }
-  }, [router, isHomePage]);
+  }, [router, isHomePage])
 
   function isActive(section) {
     if (section.id === currentSection) {
@@ -204,32 +201,36 @@ export function Layout({ children, title, tableOfContents, }) {
   }
 
   function handlePromptWizard(event) {
-    event.preventDefault();
+    event.preventDefault()
     setInitialLoad(false)
-    setShowWizardForm(!showWizardForm);
+    setShowWizardForm(!showWizardForm)
   }
 
-  const [ref, { height }] = useMeasure();
- 
+  const [ref, { height }] = useMeasure()
+
   const wizardFormStyles = useSpring({
     overflow: 'hidden',
     height: showWizardForm ? height : 0,
     from: { height: showWizardForm ? 0 : height },
     config: { duration: 500 },
-  });
+  })
 
   return (
     <>
       <Header navigation={navigation} />
 
-      {isHomePage && <Hero handlePromptWizard={handlePromptWizard} showWizardForm={showWizardForm} />}
+      {isHomePage && (
+        <Hero
+          handlePromptWizard={handlePromptWizard}
+          showWizardForm={showWizardForm}
+        />
+      )}
 
       <animated.div style={wizardFormStyles} className="shadow-bottom">
         <div ref={ref}>
           <WizardForm initialLoad={initialLoad} />
         </div>
       </animated.div>
-
 
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
